@@ -5,7 +5,7 @@ pipeline {
     environment {
         IMAGE = "varma2004/devops-app"
         TAG = "${BUILD_NUMBER}"
-        APP_IP = "16.176.1.18"
+        APP_IP = "15.134.91.66"
     }
 
     stages {
@@ -22,7 +22,7 @@ pipeline {
                     python3 -m venv venv
                     . venv/bin/activate
                     pip install -r requirements.txt
-                    pytest -v
+                    python -m pytest -v
                 '''
             }
         }
