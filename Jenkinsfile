@@ -71,6 +71,11 @@ pipeline {
                             --name webapp \
                             --restart unless-stopped \
                             -p 80:5000 \
+                            --log-driver=awslogs \
+                            --log-opt awslogs-region=ap-southeast-2 \
+                            --log-opt awslogs-group=/devops/webapp \
+                            --log-opt awslogs-stream=webapp-container \
+                            --log-opt awslogs-create-group=true \
                             $IMAGE:$TAG
                         "
                     '''
