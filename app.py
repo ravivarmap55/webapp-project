@@ -2,7 +2,7 @@ from flask import Flask, jsonify
 app = Flask(__name__)
 @app.route("/")
 def home():
-    return jsonify(message="Hello from AWS CI/CD FITA pondy pipeline!")
+    return jsonify(message="Hello from AWS CI/CD pondy pipeline!")
 @app.route("/health")
 def health():
     return jsonify(status="ok")
